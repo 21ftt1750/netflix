@@ -5,8 +5,28 @@ import logo from '../../public/images/Logonetflix.png';
 import Image from 'next/image';
 import user from '../../public/images/profile.jpg'
 import mName from '../../public/images/mName.webp';
-import ca from '../../public/images/ca.gif'
+import forgotten from '../../public/images/forgotten.jpg'
 import pb from '../../public/images/pb.jpg'
+import you from '../../public/images/you.jpg'
+import eh from '../../public/images/eh.jpg'
+import escape from '../../public/images/escape.jpg'
+import bm from '../../public/images/bb.webp'
+import f2 from '../../public/images/2f2.webp'
+import wednesday from '../../public/images/wednesday.jpg'
+import gh from '../../public/images/gh.webp'
+import tc from '../../public/images/tc.jpeg'
+import gf from '../../public/images/gf.jpg'
+import ss from '../../public/images/ss.jpg'
+import fb from '../../public/images/fb.jpg'
+import lt from '../../public/images/lt.jpg'
+import dh from '../../public/images/dh.jpeg'
+import here from '../../public/images/here.jpg'
+import jk from '../../public/images/jk.webp'
+import meh from '../../public/images/meh.jpg'
+import yn from '../../public/images/yn.jpg'
+import sa from '../../public/images/sa.png'
+import akira from '../../public/images/akira.jpg'
+import wc from '../../public/images/wc.jpg'
 import { Bell, Info, Play, Search } from 'lucide-react';
 import {
     Carousel,
@@ -17,6 +37,37 @@ import {
   } from "@/components/ui/carousel"
 import React from 'react';
   
+const firstRow = [
+  {imageLink: '/images/you.jpg'},
+  {imageLink: '/images/forgotten.jpg'},
+  {imageLink: '/images/bm.png'},
+  {imageLink: '/images/wednesday.jpg'},
+  {imageLink: '/images/escape.jpg'},
+  {imageLink: '/images/eh.jpg'},
+]
+const secondRow = [
+  {imageLink: '/images/gf.jpg'},
+  {imageLink: '/images/ss.jpg'},
+  {imageLink: '/images/tc.jpeg'},
+  {imageLink: '/images/fb.jpg'},
+  {imageLink: '/images/gh.webp'},
+  {imageLink: '/images/2f2.webp'},
+]
+
+const thirdRow =[
+  {imageLink: '/images/here.jpg'},
+  {imageLink: '/images/dh.jpeg'},
+  {imageLink: '/images/lt.jpg'},
+]
+
+const fourthRow = [
+  {imageLink: '/images/jk.webp'},
+  {imageLink: '/images/sa.png'},
+  {imageLink: '/images/meh.jpg'},
+  {imageLink: '/images/akira.jpg'},
+  {imageLink: '/images/yn.jpg'},
+  {imageLink: '/images/wc.jpg'},
+] 
 
 function User() {
   const [scrolling, setScrolling] = useState(false);
@@ -91,37 +142,207 @@ function User() {
         </div>
         </div>
       </div>
-      <div className='w-screen h-screen bg-[#141414] text-white '>
-        <p className=' px-20 font-semibold py-3  text-xl'>Top Picks for you</p>
-        <div className=' w-screen flex justify-center '>
+      <div className='  w-screen  bg-[#141414] text-white '>
+        <p className=' px-16 font-semibold py-3  text-xl'>Top Picks for you</p>
+        <div className=' w-screen flex justify-center  '>
         <Carousel
   opts={{
     align: "start",
   }}
-  className="w-11/12 h-32"
+  className="w-11/12 h-32 "
 >
   <CarouselContent>
     {Array.from({ length: 5 }).map((_, index) => (
       <React.Fragment key={index}>
-        <CarouselItem className=" lg:basis-1/6  flex justify-center">
-         
-            <Image  src={ca} alt="" className='rounded-sm' />
-          
+        {firstRow.map((row, rowIndex) =>(
+            <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
+            <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
         </CarouselItem>
-        <CarouselItem className=" lg:basis-1/6  flex justify-center">
-         
-            <Image height={122} src={pb} alt="" className='rounded-sm' />
-         
-        </CarouselItem>
+        ) )}      
       </React.Fragment>
     ))}
   </CarouselContent>
-  <CarouselPrevious className='bg-transparent h-full border-none' />
-  <CarouselNext className='bg-transparent h-full border-none w-14 rounded-sm hover:bg-black hover:contrast-75' />
+  <CarouselPrevious className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+  <CarouselNext className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
 </Carousel>
 
       </div>
+      <br />
+      <br />
+
+{/* next */}
+
+
+<p className=' px-16 font-semibold py-3  text-xl'>Popular on Netflix</p>
+        <div className=' w-screen flex justify-center  '>
+        <Carousel
+  opts={{
+    align: "start",
+  }}
+  className="w-11/12 h-32 "
+>
+  <CarouselContent>
+    {Array.from({ length: 5 }).map((_, index) => (
+      <React.Fragment key={index}>
+        {secondRow.map((row, rowIndex) =>(
+            <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
+            <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+        </CarouselItem>
+        ) )}      
+      </React.Fragment>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+  <CarouselNext className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+</Carousel>
+
+      </div> 
+      <br />
+      <br /> 
+
+{/* next */}
+
+<p className=' px-16 font-semibold py-3  text-xl'>My List</p>
+        <div className=' w-screen flex justify-center  '>
+        <Carousel
+  opts={{
+    align: "start",
+  }}
+  className="w-11/12 h-32 "
+>
+  <CarouselContent>
+    {Array.from({ length: 1 }).map((_, index) => (
+     <React.Fragment key={index}>
+     {thirdRow.map((row, rowIndex) =>(
+         <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
+         <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+     </CarouselItem>
+     ) )}      
+   </React.Fragment>
+    ))}
+  </CarouselContent>
+
+</Carousel>
+
       </div>
+      <br />
+      <br />
+
+{/* next */}
+<p className=' px-16 font-semibold py-3  text-xl'>Anime</p>
+        <div className=' w-screen flex justify-center  '>
+        <Carousel
+  opts={{
+    align: "start",
+  }}
+  className="w-11/12 h-32 "
+>
+  <CarouselContent>
+    {Array.from({ length: 5 }).map((_, index) => (
+     <React.Fragment key={index}>
+     {fourthRow.map((row, rowIndex) =>(
+         <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
+         <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+     </CarouselItem>
+     ) )}      
+   </React.Fragment>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+  <CarouselNext className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+</Carousel>
+
+      </div>
+      <br />
+      <br />
+
+{/* next */}
+<p className=' px-16 font-semibold py-3  text-xl'>Hollywood Movies</p>
+        <div className=' w-screen flex justify-center  '>
+        <Carousel
+  opts={{
+    align: "start",
+  }}
+  className="w-11/12 h-32 "
+>
+  <CarouselContent>
+    {Array.from({ length: 5 }).map((_, index) => (
+       <React.Fragment key={index}>
+       {firstRow.map((row, rowIndex) =>(
+           <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
+           <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+       </CarouselItem>
+       ) )}      
+     </React.Fragment>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+  <CarouselNext className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+</Carousel>
+
+      </div>
+      <br />
+      <br />
+
+{/* next */}
+<p className=' px-16 font-semibold py-3  text-xl'>Western Action Movies</p>
+        <div className=' w-screen flex justify-center  '>
+        <Carousel
+  opts={{
+    align: "start",
+  }}
+  className="w-11/12 h-32 "
+>
+  <CarouselContent>
+    {Array.from({ length: 5 }).map((_, index) => (
+       <React.Fragment key={index}>
+       {secondRow.map((row, rowIndex) =>(
+           <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
+           <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+       </CarouselItem>
+       ) )}      
+     </React.Fragment>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+  <CarouselNext className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+</Carousel>
+
+      </div>
+      <br />
+      <br />
+
+{/* next */}
+<p className=' px-16 font-semibold py-3  text-xl'>Thriller Movies</p>
+        <div className=' w-screen flex justify-center  '>
+        <Carousel
+  opts={{
+    align: "start",
+  }}
+  className="w-11/12 h-32 "
+>
+  <CarouselContent>
+    {Array.from({ length: 5 }).map((_, index) => (
+       <React.Fragment key={index}>
+       {thirdRow.map((row, rowIndex) =>(
+           <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
+           <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+       </CarouselItem>
+       ) )}      
+     </React.Fragment>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+  <CarouselNext className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+</Carousel>
+
+      </div>
+      <br />
+      <br />
+
+      {/* closing  */}
+      </div>
+      <div className='border '></div>
     </div>
   );
 }
