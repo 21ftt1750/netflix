@@ -7,27 +7,8 @@ import user from '../../public/images/profile.jpg'
 import mName from '../../public/images/mName.webp';
 import forgotten from '../../public/images/forgotten.jpg'
 import pb from '../../public/images/pb.jpg'
-import you from '../../public/images/you.jpg'
-import eh from '../../public/images/eh.jpg'
-import escape from '../../public/images/escape.jpg'
-import bm from '../../public/images/bb.webp'
-import f2 from '../../public/images/2f2.webp'
-import wednesday from '../../public/images/wednesday.jpg'
-import gh from '../../public/images/gh.webp'
-import tc from '../../public/images/tc.jpeg'
-import gf from '../../public/images/gf.jpg'
-import ss from '../../public/images/ss.jpg'
-import fb from '../../public/images/fb.jpg'
-import lt from '../../public/images/lt.jpg'
-import dh from '../../public/images/dh.jpeg'
-import here from '../../public/images/here.jpg'
-import jk from '../../public/images/jk.webp'
-import meh from '../../public/images/meh.jpg'
-import yn from '../../public/images/yn.jpg'
-import sa from '../../public/images/sa.png'
-import akira from '../../public/images/akira.jpg'
-import wc from '../../public/images/wc.jpg'
-import { Bell, Info, Play, Search } from 'lucide-react';
+
+import { Bell, Facebook, Info, Instagram, Play, Search, Twitter, Youtube } from 'lucide-react';
 import {
     Carousel,
     CarouselContent,
@@ -342,7 +323,42 @@ function User() {
 
       {/* closing  */}
       </div>
-      <div className='border '></div>
+      <div className=' w-screen bg-[#141414] text-[#808080] '>
+        <div className='flex justify-center pt-20 px-64'>
+          <div className='grid grid-cols-4  w-full gap-3 text-xs px-4'>
+            <div className=' inline-flex text-white'>
+            <Facebook className='mx-3'/>
+            <Instagram className='mx-3'/>
+            <Twitter className='mx-3' />
+            <Youtube className='mx-3' />
+            </div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>Audio Description</p>
+            <p>Help Center</p>
+            <p>Gift Cards</p>
+            <p>Media Center</p>
+            <p>Investor Relations</p>
+            <p>Jobs</p>
+            <p>Terms of Use</p>
+            <p>Privacy</p>
+            <p>Legal Notices</p>
+            <p>Cookie Preferences</p>
+            <p>Corporate Information</p>
+            <p>Contact Us</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div className='border w-24 p-2 text-xs border-[#808080]'><p>Service Code</p></div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p className='text-xs py-4'>© 1997-2024 Netflix, Inc.</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
