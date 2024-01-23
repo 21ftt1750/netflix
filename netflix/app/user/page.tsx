@@ -335,23 +335,23 @@ function User() {
             <p></p>
             <p></p>
             <p></p>
-            <p>Audio Description</p>
-            <p>Help Center</p>
-            <p>Gift Cards</p>
-            <p>Media Center</p>
-            <p>Investor Relations</p>
-            <p>Jobs</p>
-            <p>Terms of Use</p>
-            <p>Privacy</p>
-            <p>Legal Notices</p>
-            <p>Cookie Preferences</p>
-            <p>Corporate Information</p>
-            <p>Contact Us</p>
+            <p className='hover:underline'>Audio Description</p>
+            <p className='hover:underline'>Help Center</p>
+            <p className='hover:underline'>Gift Cards</p>
+            <p className='hover:underline'>Media Center</p>
+            <p className='hover:underline'>Investor Relations</p>
+            <p className='hover:underline'>Jobs</p>
+            <p className='hover:underline'>Terms of Use</p>
+            <p className='hover:underline'>Privacy</p>
+            <p className='hover:underline'>Legal Notices</p>
+            <p className='hover:underline'>Cookie Preferences</p>
+            <p className='hover:underline'>Corporate Information</p>
+            <p className='hover:underline'>Contact Us</p>
             <p></p>
             <p></p>
             <p></p>
             <p></p>
-            <div className='border w-24 p-2 text-xs border-[#808080]'><p>Service Code</p></div>
+            <div className='border w-24 p-2 text-xs border-[#808080]'><p className='hover:text-white'>Service Code</p></div>
             <p></p>
             <p></p>
             <p></p>

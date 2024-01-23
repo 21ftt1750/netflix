@@ -25,7 +25,7 @@ const login = observer(() => {
     <Image src={neflixBgSignin}  alt='background image' className=' brightness-50  absolute '></Image>
     <Image src={logo} alt="logo" className=' relative h-14 w-44 left-10 top-5'></Image>
   <div className='absolute flex justify-center  w-screen h-screen '>
- <div className='  grid self-center witDiv h-5/6 bg-black opacity-80 p-14 text-3xl'>
+ <div className='  grid self-center witDiv h-5/6 bg-black opacity-80 p-14 text-3xl rounded-sm'>
 <div className=''>
 <p className='font-semibold text-white'>Sign In</p>
 <br />

@@ -240,7 +240,7 @@ const register = () => {
 
 
 
-      <div className='bg-black w-screen  h-screen border-b-8 border-[#242424] px-40 py-16 text-[#b3b3b3]'>
+      <div className='bg-black w-screen  border-b-8 border-[#242424] px-40 py-14 text-[#b3b3b3]'>
         <div className='w-full  grid grid-cols-4 gap-4 text-sm  font-small'>
           <p className=' underline'>Questions? Contact us.</p>
           <p className=' underline'></p>
