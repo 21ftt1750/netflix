@@ -26,7 +26,7 @@ const register = () => {
         <div className=' py-2 flex'><Check size={32} color="#e31e25" strokeWidth={1.5} className='mr-2' /><p className='flex items-start '>No ads and no extra fees. Ever.</p></div>
         </div>
 <div className='w-full justify-center flex pt-2 ml-2 pb-16'>
-<Link href="/register/regform" className='w-11/12 bg-red-600 text-2xl flex items-center justify-center text-white h-16 rounded-sm'>Next</Link>
+<Link href="/register/planform" className='w-11/12 bg-red-600 text-2xl flex items-center justify-center text-white h-16 rounded-sm'>Next</Link>
 </div>
         </div>
     </div>

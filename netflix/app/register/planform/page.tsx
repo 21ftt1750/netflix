@@ -143,7 +143,7 @@ Only people who live with you may use your account. Watch on 4 different devices
 </p>
 <div className=' flex justify-center pt-5'>
   <div className='w-screen flex justify-center  px-20'>
-       <Link href="" className=' bg-red-600 text-white text-xl font-semibold h-20 items-center w-5/12 justify-center flex rounded-sm'>Next</Link>
+       <Link href="paymentPicker" className=' bg-red-600 text-white text-xl font-semibold h-20 items-center w-5/12 justify-center flex rounded-sm'>Next</Link>
        </div></div>
     </div>
 </div>

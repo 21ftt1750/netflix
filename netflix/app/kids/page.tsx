@@ -1,12 +1,12 @@
 'use client' 
 
 import { useEffect, useState } from 'react';
-import logo from '../../public/images/Logonetflix.png';
+import logo from '../../../public/images/Logonetflix.png';
 import Image from 'next/image';
-import user from '../../public/images/profile.jpg'
-import mName from '../../public/images/mName.webp';
-import forgotten from '../../public/images/forgotten.jpg'
-import pb from '../../public/images/pb.jpg'
+import kids from '../../../public/images/kids2.png'
+import sonicName from '../../../public/images/sonicName.webp';
+
+import sonic from '../../../public/images/sonic.webp'
 
 import { Bell, Facebook, Info, Instagram, Play, Search, Twitter, Youtube } from 'lucide-react';
 import {
@@ -71,15 +71,16 @@ function User() {
 
   return (
     <div className='relative w-screen h-screen bg-[#141414]'>
-     <Image src={pb} alt="peaky blinders" className="z-0 w-full h-full brightness-50" />
+     <Image src={sonic} alt="peaky blinders" className="z-0 w-full h-full brightness-75" />
          
-     <div className='absolute top-0 left-0 w-1/2 h-screen  py-40 px-14 text-white'>
+     <div className='absolute top-0 left-0 w-1/2 h-screen  py-32 px-14 text-white'>
         <div className=' flex self-center'>
-          <Image src={mName} alt='moviename' className='h-56 w-10/12'></Image>
+          <Image src={sonicName} alt='moviename' className='h-56 w-10/12'></Image>
           </div>
-          <br />
           
-        <p className=' w-11/12 leading-6 text-lg'>A notorious gang in 1919 Birmingham, England, is led by the fierce Tommy Shelby, a crime boss set on moving up in the world no&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; matter  the cost</p>
+          <p className='text-2xl font-semibold py-2'>Watch Season 3 Now</p>
+          
+        <p className=' w-11/12 leading-6  text-lg pt-2'>When an explosive battle with Dr. Eggman shatters the universe,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonic races through parallel dimensions to reconnect with his &nbsp;&nbsp;&nbsp;&nbsp; friends and save the world.</p>
        <br />
         <div className=' flex items-center'>
             
@@ -101,7 +102,8 @@ function User() {
             <Image src={logo} width={96} height={96} alt='logo' />
           </div>
           <div className='inline-flex px-3 h-11 text-sm'>
-            <p className='justify-start flex items-end hover:text-[#b3b3b3] px-4'>Home</p>
+            <p className='justify-start flex items-end hover:text-[#b3b3b3] px-3'>Home</p>
+            <p className='justify-start flex items-end hover:text-[#b3b3b3] pr-2'>Characters</p>
             <p className='justify-start flex items-end hover:text-[#b3b3b3] w-20 '>TV Shows</p>
             <p className='justify-start flex items-end hover:text-[#b3b3b3] px-1'>Movies</p>
             <p className='justify-start flex items-end hover:text-[#b3b3b3] px-4'>Latest</p>
@@ -110,21 +112,15 @@ function User() {
           </div>
          
         </div>
-        <div className='inline-flex  w-1/2 justify-end text-white '>
-            <div className='inline-flex px-12 h-full '>
+        <div className='inline-flex  w-5/12 justify-end text-white '>
+            <div className='inline-flex h-full '>
         <Search/>
-        <a href='user/kids' className='px-5 text-xs flex items-center h-6'>Kids</a>
-        <span className='flex items-start '>
-        <Bell  />
-        </span>
-      <div className='px-5 '>
-            <Image src={user} alt='user' className='size-8 rounded-sm shadow-2xl'></Image>
-            
-            </div>
+     <Image alt='kids' src={kids} className='size-8 rounded-sm mx-4'></Image>
+     <Link href="" className=' bg-red-600 w-24 rounded-sm justify-center h-8 text-sm flex items-center'>Exit Kids</Link>
+       
         </div>
         </div>
       </div>
-      
       <div className='  w-screen  bg-[#141414] text-white '>
      
         <div className="absolute top-3/4 w-full py-24">

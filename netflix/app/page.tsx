@@ -12,6 +12,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
+import Link from 'next/link';
 
 
 
@@ -49,7 +50,7 @@ const register = () => {
 <br />
 <div className=' flex justify-center '>
   <input type="text" className='bg-black bg-opacity-50 border-2 h-14 rounded-sm w-2/5 p-2' placeholder='Email address'/>
-  <button className='bg-[#e80c14] hover:bg-[#c8141c] mx-2 h-14 w-48 text-xl font-semibold rounded-sm flex justify-center items-center'>Get Started <ChevronRight /></button>
+  <Link href="/register" className='bg-[#e80c14] hover:bg-[#c8141c] mx-2 h-14 w-48 text-xl font-semibold rounded-sm flex justify-center items-center'>Get Started <ChevronRight /></Link>
 </div>
               </div>
               </div>

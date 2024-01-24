@@ -92,7 +92,7 @@ const login = observer(() => {
 
     <br />
     <div className='  text-sm '>
-    <span className=' text-[#8c8c8c]  w-24 '>New to Netlfix?<a href="register" className='text-sm text-white hover:underline'> Sign Up Now</a></span>
+    <span className=' text-[#8c8c8c]  w-24 '>New to Netlfix?<a href="../" className='text-sm text-white hover:underline'> Sign Up Now</a></span>
     <br />
     <br />
 

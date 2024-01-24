@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import logo from '../../../public/images/Logonetflix.png'
 import { Laptop, Monitor, Smartphone } from 'lucide-react'
+import Link from 'next/link'
 
 const register = () => {
   return (
@@ -34,7 +35,7 @@ We hate paperwork, too.</p>
           />
           <p className='mx-3 mb-3 text-sm tracking-wide'>Please do not email me Netflix special offers.</p>
           </span>
-<button className='w-full bg-red-600 text-2xl text-white h-16 rounded-sm'>Next</button>
+<div className='w-full bg-red-600 text-2xl text-white h-16 rounded-sm flex justify-center items-center'><Link href="/register/plan" >Next</Link></div>
 </div>
 
         </div>

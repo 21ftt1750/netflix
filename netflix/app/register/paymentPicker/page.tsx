@@ -17,7 +17,7 @@ const register = () => {
 </span>
     </div>
 
-    <div className='border w-screen h-screen flex justify-center'>
+    <div className=' w-screen mb-44 flex justify-center'>
         <div className='mt-10 mr-4  '>
             <div className='flex justify-center'>
             <div className='border-2 h-12 w-12 rounded-full flex justify-center items-center border-[#e31e25]'><LockKeyhole color='#e31e25' /></div>
@@ -31,10 +31,12 @@ const register = () => {
         <p className='w-5/12 text-center font-bold'>Secure for peace of mind. Cancel easily online.</p>
         </span>
 
-        <p className='flex justify-end text-xs mt-5 '>End-to-end encrypted <LockKeyhole strokeWidth={3} absoluteStrokeWidth  color='#ffb53f' width={12} height={12} className='ml-2 mr-4' /></p>
+        <p className='flex justify-end text-xs mt-5 '>End-to-end encrypted <LockKeyhole strokeWidth={3} absoluteStrokeWidth  color='#ffb53f' width={12} height={12} className='ml-1 mr-7' /></p>
         <div className='w-full flex justify-center'>
-        <div className='w-11/12 h-16 rounded-sm border-2 mt-1 flex items-center px-2'>
-            <p>Credit or Debit Card</p>
+            <Link href="payment">
+        <div className=' h-16 rounded-sm border border-[#a9a9a9] mt-1 flex items-center px-2'>
+            
+            <p className='w-40'>Credit or Debit Card</p>
 <Image className='mx-1' src={visa} alt={''} width={48} height={48}></Image>
 <Image className='mx-1' src={mastercard} alt={''}  width={32} height={32}></Image>
 <Image className='mx-1' src={amex} alt={''}  width={44} height={44}></Image>
@@ -42,6 +44,7 @@ const register = () => {
 <ChevronRight/>
 </span>
         </div>
+        </Link>
         </div>
         </div>
     </div>
