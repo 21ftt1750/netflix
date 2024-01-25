@@ -8,6 +8,16 @@ import mName from '../../public/images/mName.webp';
 import forgotten from '../../public/images/forgotten.jpg'
 import pb from '../../public/images/pb.jpg'
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+
 import { Bell, Facebook, Info, Instagram, Play, Search, Twitter, Youtube } from 'lucide-react';
 import {
     Carousel,
@@ -51,7 +61,15 @@ const fourthRow = [
   {imageLink: '/images/wc.jpg'},
 ] 
 
+
+
 function User() {
+
+  interface DropdownMenuLabelProps {
+    children: string;
+  }
+  
+
   const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
@@ -101,12 +119,12 @@ function User() {
             <Image src={logo} width={96} height={96} alt='logo' />
           </div>
           <div className='inline-flex px-3 h-11 text-sm'>
-            <p className='justify-start flex items-end hover:text-[#b3b3b3] px-4'>Home</p>
-            <p className='justify-start flex items-end hover:text-[#b3b3b3] w-20 '>TV Shows</p>
-            <p className='justify-start flex items-end hover:text-[#b3b3b3] px-1'>Movies</p>
-            <p className='justify-start flex items-end hover:text-[#b3b3b3] px-4'>Latest</p>
-            <p className='justify-start flex items-end hover:text-[#b3b3b3] px-1'>My List</p>
-            <p className='justify-start flex items-end hover:text-[#b3b3b3] px-3'>Browse by Languages</p>
+            <a href='/user'className='justify-start flex items-end hover:text-[#b3b3b3] px-4'>Home</a>
+            <a href='/user/tvShows' className='justify-start flex items-end hover:text-[#b3b3b3] w-20 '>TV Shows</a>
+            <a href='/user/movies' className='justify-start flex items-end hover:text-[#b3b3b3] px-1'>Movies</a>
+            <a href='/user/latest' className='justify-start flex items-end hover:text-[#b3b3b3] px-4'>Latest</a>
+            <a href='/user/myList' className='justify-start flex items-end hover:text-[#b3b3b3] px-1'>My List</a>
+            <a href='/user/bbl' className='justify-start flex items-end hover:text-[#b3b3b3] px-3'>Browse by Languages</a>
           </div>
          
         </div>
@@ -117,10 +135,14 @@ function User() {
         <span className='flex items-start '>
         <Bell  />
         </span>
-      <div className='px-5 '>
-            <Image src={user} alt='user' className='size-8 rounded-sm shadow-2xl'></Image>
-            
-            </div>
+       <DropdownMenu>
+        <DropdownMenuTrigger>
+      <Image src={user} alt='user' className='size-8 rounded-sm shadow-2xl z-10'></Image>      
+          </DropdownMenuTrigger>
+       <DropdownMenuContent><DropdownMenuItem></DropdownMenuItem>
+       <DropdownMenuItem></DropdownMenuItem></DropdownMenuContent>
+       </DropdownMenu>
+
         </div>
         </div>
       </div>
