@@ -5,6 +5,7 @@ import Image from 'next/image';
 import kids2 from'../../public/images/kids2.png'
 import add from '../../public/images/add.png'
 import authStore from '../interfaces/authStore';
+import { redirect } from 'next/navigation'
 
 import { observer } from 'mobx-react';
 import login from '../login/page';
@@ -13,9 +14,8 @@ const who = observer( () => {
         console.log(authStore.isAuthenticated)
     })
     const handleRedirect = () => {
-        // Redirect to the desired location
-        window.location.href = '/login'; // Replace '/login' with the path you want to redirect to
-      };
+      redirect('/login')
+    };
   return (
     <>
     {authStore.isAuthenticated ? (
