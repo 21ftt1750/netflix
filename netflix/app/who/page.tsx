@@ -34,9 +34,11 @@ const who = observer( () => {
             </div>
 
             <div className='grid h-32'>
+            <a href="user/kids">
               <div className='flex justify-center border-4 border-[#141414] hover:border-white rounded-lg '>
                 <Image className="h-40 rounded-sm" src={kids2} alt='' />
               </div>
+              </a>
               <p className='py-2 flex justify-center text-[#808080] text-lg'>Kids</p>
             </div>
 

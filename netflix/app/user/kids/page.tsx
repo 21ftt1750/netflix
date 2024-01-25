@@ -18,6 +18,15 @@ import {
   } from "@/components/ui/carousel"
 import React from 'react';
 import Link from 'next/link';
+
+const characters = [
+  {imageLink: '/images/spongebob.webp'},
+  {imageLink: '/images/peppa.jpeg'},
+  {imageLink: '/images/baby.jpg'},
+  {imageLink: '/images/sonic.jpg'},
+  {imageLink: '/images/paw.jpg'},
+  {imageLink: '/images/tj.jpg'},
+]
   
 const firstRow = [
   {imageLink: '/images/you.jpg'},
@@ -116,7 +125,7 @@ function User() {
             <div className='inline-flex h-full '>
         <Search/>
      <Image alt='kids' src={kids} className='size-8 rounded-sm mx-4'></Image>
-     <Link href="/user" className=' bg-red-600 w-24 rounded-sm justify-center h-8 text-sm flex items-center'>Exit Kids</Link>
+     <Link href="/who" className=' bg-red-600 w-24 rounded-sm justify-center h-8 text-sm flex items-center'>Exit Kids</Link>
        
         </div>
         </div>
@@ -124,19 +133,19 @@ function User() {
       <div className='  w-screen  bg-[#141414] text-white '>
      
         <div className="absolute top-3/4 w-full py-24">
-        <p className=' px-16 font-semibold py-3  text-xl'>Top Picks for you</p>
+        <p className=' px-16 font-semibold py-3  text-xl'>Characters</p>
         <Carousel
           opts={{
             align: "start",
           }}
-          className="w-11/12 h-32 mx-auto"
+          className="w-11/12 h-32 mx-auto flex items-center mt-8"
         >
           <CarouselContent>
             {Array.from({ length: 5 }).map((_, index) => (
               <React.Fragment key={index}>
-                {firstRow.map((row, rowIndex) => (
-                  <CarouselItem className="lg:basis-1/6 flex justify-center h-32">
-                    <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />
+                {characters.map((row, rowIndex) => (
+                  <CarouselItem className="lg:basis-1/6 flex justify-center h-48   rounded-full">
+                    <Image width={200} height={96} src={row.imageLink} alt="" className='rounded-full' />
                   </CarouselItem>
                 ))}
               </React.Fragment>
@@ -157,7 +166,7 @@ function User() {
 {/* next */}
 
 
-<p className=' px-16 font-semibold py-3  text-xl'>Popular on Netflix</p>
+<p className=' px-16 font-semibold py-3 mt-8  text-xl'>Action</p>
         <div className=' w-screen flex justify-center  '>
         <Carousel
   opts={{
@@ -213,7 +222,7 @@ function User() {
       <br />
 
 {/* next */}
-<p className=' px-16 font-semibold py-3  text-xl'>Anime</p>
+<p className=' px-16 font-semibold py-3  text-xl'>Popular</p>
         <div className=' w-screen flex justify-center  '>
         <Carousel
   opts={{
@@ -241,7 +250,7 @@ function User() {
       <br />
 
 {/* next */}
-<p className=' px-16 font-semibold py-3  text-xl'>Hollywood Movies</p>
+<p className=' px-16 font-semibold py-3  text-xl'>Adventures</p>
         <div className=' w-screen flex justify-center  '>
         <Carousel
   opts={{
@@ -269,7 +278,7 @@ function User() {
       <br />
 
 {/* next */}
-<p className=' px-16 font-semibold py-3  text-xl'>Western Action Movies</p>
+<p className=' px-16 font-semibold py-3  text-xl'>Funny</p>
         <div className=' w-screen flex justify-center  '>
         <Carousel
   opts={{
@@ -297,7 +306,7 @@ function User() {
       <br />
 
 {/* next */}
-<p className=' px-16 font-semibold py-3  text-xl'>Thriller Movies</p>
+<p className=' px-16 font-semibold py-3  text-xl'>Animated</p>
         <div className=' w-screen flex justify-center  '>
         <Carousel
   opts={{

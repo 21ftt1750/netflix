@@ -113,7 +113,7 @@ function User() {
         <div className='inline-flex  w-1/2 justify-end text-white '>
             <div className='inline-flex px-12 h-full '>
         <Search/>
-        <a href='user/kids' className='px-5 text-xs flex items-center h-6'>Kids</a>
+        <a href='user/kids' className='px-5 text-sm flex items-center h-6'>Kids</a>
         <span className='flex items-start '>
         <Bell  />
         </span>
@@ -140,7 +140,7 @@ function User() {
               <React.Fragment key={index}>
                 {firstRow.map((row, rowIndex) => (
                   <CarouselItem className="lg:basis-1/6 flex justify-center h-32">
-                    <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />
+                  <Link href="/user/moviePlayer"> <Image width={11200} height={10000} src={row.imageLink} alt="" className='rounded-sm h-full' /></Link> 
                   </CarouselItem>
                 ))}
               </React.Fragment>
@@ -174,7 +174,7 @@ function User() {
       <React.Fragment key={index}>
         {secondRow.map((row, rowIndex) =>(
             <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
-            <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+       <Link href="/user/moviePlayer">   <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm h-full' />    </Link>        
         </CarouselItem>
         ) )}      
       </React.Fragment>
@@ -203,7 +203,7 @@ function User() {
      <React.Fragment key={index}>
      {thirdRow.map((row, rowIndex) =>(
          <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
-         <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+    <Link href="/user/moviePlayer">    <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />  </Link>          
      </CarouselItem>
      ) )}      
    </React.Fragment>
@@ -230,7 +230,7 @@ function User() {
      <React.Fragment key={index}>
      {fourthRow.map((row, rowIndex) =>(
          <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
-         <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+   <Link href="/user/moviePlayer">     <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />  </Link>          
      </CarouselItem>
      ) )}      
    </React.Fragment>
@@ -258,7 +258,7 @@ function User() {
        <React.Fragment key={index}>
        {firstRow.map((row, rowIndex) =>(
            <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
-           <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+    <Link href="/user/moviePlayer">      <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm h-full' />  </Link>          
        </CarouselItem>
        ) )}      
      </React.Fragment>
@@ -286,7 +286,7 @@ function User() {
        <React.Fragment key={index}>
        {secondRow.map((row, rowIndex) =>(
            <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
-           <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+   <Link href="/user/moviePlayer">       <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm h-full' />  </Link>          
        </CarouselItem>
        ) )}      
      </React.Fragment>
@@ -314,7 +314,7 @@ function User() {
        <React.Fragment key={index}>
        {thirdRow.map((row, rowIndex) =>(
            <CarouselItem className=" lg:basis-1/6  flex justify-center h-32">         
-           <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />          
+   <Link href="/user/moviePlayer">      <Image width={11200} height={96} src={row.imageLink} alt="" className='rounded-sm' />    </Link>        
        </CarouselItem>
        ) )}      
      </React.Fragment>
