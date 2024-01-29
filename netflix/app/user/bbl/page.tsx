@@ -80,7 +80,7 @@ function User() {
       <div className='inline-flex  w-1/2 justify-end text-white '>
           <div className='inline-flex px-12 h-full '>
       <Search/>
-      <a href='user/kids' className='px-5 text-sm flex items-center h-6'>Kids</a>
+      <a href='kids' className='px-5 text-sm flex items-center h-6'>Kids</a>
       <span className='flex items-start '>
       <Bell  />
       </span>

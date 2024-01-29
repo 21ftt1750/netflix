@@ -76,5 +76,14 @@
   .witDiv{
     width: 450px;
   }
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0.1em;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
   
 }
