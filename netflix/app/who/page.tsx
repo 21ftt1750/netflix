@@ -9,16 +9,11 @@ import { redirect } from 'next/navigation'
 
 import { observer } from 'mobx-react';
 import login from '../login/page';
-const who = observer( () => {
-    useEffect(() => {
-        console.log(authStore.isAuthenticated)
-    })
-    const handleRedirect = () => {
-      redirect('/login')
-    };
+const who = () => {
+  
   return (
     <>
-    {authStore.isAuthenticated ? (
+  
       <div className='w-screen h-screen flex justify-center bg-[#141414] text-white font-sans'>
         <div className='grid self-center w-5/12 p-8 '>
           <div className='w-full flex justify-center text-6xl my-6'>Who's watching?</div>
@@ -53,19 +48,16 @@ const who = observer( () => {
           </div>
 
           <div className='h-10 flex justify-center '>
-            <div className='border border-[#808080] text-lg w-1/3 flex justify-center items-center text-[#808080]'>
+            <a  href="who/manageProfile" className='border border-[#808080] text-lg w-1/3 flex justify-center items-center text-[#808080]'>
               Manage Profiles
-            </div>
+            </a>
           </div>
         </div>
       </div>
-    ) : (
-    
-        handleRedirect()
-    )}
+   
   </>
     
   )
-})
+}
 
 export default who

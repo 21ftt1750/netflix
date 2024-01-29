@@ -216,7 +216,7 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-     <ChevronLeft size={48} strokeWidth={2.25} />
+     {/* <ChevronLeft size={48} strokeWidth={2.25} /> */}
       <span className="sr-only">Previous slide</span>
     </Button>
   )
@@ -245,7 +245,7 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-     <ChevronRight size={48} strokeWidth={2.25} />
+     {/* <ChevronRight size={48} strokeWidth={2.25} /> */}
       <span className="sr-only">Next slide</span>
     </Button>
   )
