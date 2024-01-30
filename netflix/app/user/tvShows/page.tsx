@@ -1,13 +1,14 @@
 'use client' 
 
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import logo from '../../../public/images/Logonetflix.png';
 import Image from 'next/image';
 import user from '../../../public/images/profile.jpg'
 import fool from '../../../public/images/fool.webp';
 import foolme from '../../../public/images/foolme.webp'
+import kids2 from '../../../public/images/kids2.png'
 
-import { Bell, Facebook, Info, Instagram, Play, Search, Twitter, Youtube } from 'lucide-react';
+import { Bell, ChevronDownIcon, Facebook, FolderSync, HelpCircle, Info, Instagram, Pencil, Play, Search, Twitter, UserRound, Youtube } from 'lucide-react';
 import {
     Carousel,
     CarouselContent,
@@ -17,6 +18,8 @@ import {
   } from "@/components/ui/carousel"
 import React from 'react';
 import Link from 'next/link';
+import { Menu, Transition } from '@headlessui/react';
+import classNames from 'classnames';
   
 const firstRow = [
   {imageLink: '/images/you.jpg'},
@@ -108,10 +111,123 @@ function User() {
         <span className='flex items-start '>
         <Bell  />
         </span>
-      <div className='px-5 '>
-            <Image src={user} alt='user' className='size-8 rounded-sm shadow-2xl'></Image>
-            
-            </div>
+        <Menu as="div" className="relative inline-block text-left">
+      <div>
+        <Menu.Button className="inline-flex w-full ml-4 justify-center gap-x-1.5 bg-none border-none">
+        <Image src={user} alt='user' className='size-7 rounded-sm shadow-2xl z-10'></Image>    
+          <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+        </Menu.Button>
+      </div>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <Menu.Items className="absolute right-0  z-10 mt-2 w-56 origin-top-right bg-black shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <div className="py-1">
+          <Menu.Item>
+  {({ active }) => (
+    <Link
+      href="user/kids"
+      className={classNames(
+        active ? ' underline' : 'text-white',
+        ' px-4 py-2 text-xs flex items-center' 
+      )}
+    >
+      <Image
+        src={kids2}
+        alt="Kids Icon" 
+        className="mr-2 h-8 w-8"
+      />
+      Kids
+    </Link>
+  )}
+</Menu.Item>
+<Menu.Item>
+  {({ active }) => (
+    <Link
+      href="who/manageProfile"
+      className={classNames(
+        active ? ' underline' : 'text-white',
+        ' px-4 py-2 text-xs flex items-center' 
+      )}
+    >
+      <Pencil className='mr-4 text-[#b3b3b3]'/>
+      Manage Profiles
+    </Link>
+  )}
+</Menu.Item>
+<Menu.Item>
+  {({ active }) => (
+    <Link
+      href="#"
+      className={classNames(
+        active ? ' underline' : 'text-white',
+        ' px-4 py-2 text-xs flex items-center' 
+      )}
+    >
+      <FolderSync className='mr-4' />
+      Transfer Profiile
+    </Link>
+  )}
+</Menu.Item>
+<Menu.Item>
+  {({ active }) => (
+    <Link
+      href="#"
+      className={classNames(
+        active ? ' underline' : 'text-white',
+        ' px-4 py-2 text-xs flex items-center' 
+      )}
+    >
+       <UserRound className='mr-4 text-[#b3b3b3]'/>
+      Account
+    </Link>
+  )}
+</Menu.Item>
+<Menu.Item>
+  {({ active }) => (
+    <Link
+      href="#"
+      className={classNames(
+        active ? ' underline' : 'text-white',
+        ' px-4 py-2 text-xs flex items-center' 
+      )}
+    >
+    <HelpCircle className='mr-4 text-[#b3b3b3]' />
+      Help Center
+    </Link>
+  )}
+</Menu.Item>
+           
+<Menu.Item>
+  {({ active }) => (
+    <>
+      <p className='text-[#4a4946]'>_______________________________</p>
+      <Link
+        href="../"
+        className={classNames(
+          active ? 'underline' : 'text-white',
+          'px-4 py-2 text-xs flex items-center justify-center'
+        )}
+      >
+        
+        Sign out of Netflix
+      </Link>
+    </>
+  )}
+</Menu.Item>
+
+          
+          </div>
+        </Menu.Items>
+      </Transition>
+    </Menu>
         </div>
         </div>
       </div>
