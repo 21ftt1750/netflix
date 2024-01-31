@@ -10,7 +10,7 @@ const transfer = () => {
     <div className='w-screen h-24 flex items-center border-b'>
      <Link href='/user'><Image src={logo} alt='logo' className='mx-10 w-44 h-13'/></Link>   
         <div className=' h-full w-full flex justify-end items-center '>
-<p className=' mx-16 text-lg font-semibold'>Sign Out</p>
+<Link href='/..'><p className=' mx-16 text-lg font-semibold'>Sign Out</p></Link>
 </div>
     </div>
     <div className=' py-14  w-screen  flex justify-center pb-56  '>
@@ -23,7 +23,7 @@ const transfer = () => {
 </div>
 <p className='text-[#317deb] flex justify-center mb-16'>Transfer a different profile</p>
 <div className='w-full justify-center flex'>
-<Link href="/register/regform" className=' w-80 bg-red-600 text-lg flex font-semibold items-center justify-center text-white h-12 rounded-sm'>Start Profile Transfer</Link>
+<Link href="" className=' w-80 bg-red-600 text-lg flex font-semibold items-center justify-center text-white h-12 rounded-sm'>Start Profile Transfer</Link>
 </div>
 <p className='flex justify-center mt-4 font-bold'>Learn More</p>
 <p className='flex justify-center text-xl font-semibold mt-14 mb-6'>We made it easy to transfer this profile</p>

@@ -374,7 +374,7 @@ function User() {
          
         </div>
         <div className='inline-flex  w-1/2 justify-end text-white '>
-            <div className='inline-flex px-12 h-full items-center'>
+            <div className='inline-flex px-12 h-full '>
         <Search  onClick={toggleInputVisibility} className="cursor-pointer"/>
   {isInputVisible && (
  <input
@@ -465,7 +465,7 @@ function User() {
 <Menu.Item>
   {({ active }) => (
     <Link
-      href="#"
+      href="/account"
       className={classNames(
         active ? ' underline' : 'text-white',
         ' px-4 py-2 text-xs flex items-center' 
