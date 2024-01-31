@@ -1,11 +1,11 @@
 'use client' 
 
-import { Fragment, useEffect, useState } from 'react';
+import { ChangeEvent, Fragment, useEffect, useState } from 'react';
 import logo from '../../public/images/Logonetflix.png';
 import Image from 'next/image';
 import user from '../../public/images/profile.jpg'
 import mName from '../../public/images/mName.webp';
-import forgotten from '../../public/images/forgotten.jpg'
+import pbg from '../../public/images/pbg.gif'
 import pb from '../../public/images/pb.jpg'
 import classNames from 'classnames';
 import { Menu, Transition } from '@headlessui/react'
@@ -29,14 +29,6 @@ import {
 } from "@/components/ui/dialog"
 
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 
 
 import { Bell, ChevronDownIcon, Facebook, FolderSync, HelpCircle, Info, Instagram, Pencil, Play, PlusCircle, Search, Subtitles, ThumbsUp, Twitter, UserRound, Volume2, Youtube } from 'lucide-react';
@@ -49,47 +41,75 @@ import {
   } from "@/components/ui/carousel"
 import React from 'react';
 
-import ReactPlayer from 'react-player';
-  
-const firstRow = [
-  {imageLink: '/images/you.jpg'},
-  {imageLink: '/images/forgotten.jpg'},
-  {imageLink: '/images/bm.png'},
-  {imageLink: '/images/wednesday.jpg'},
-  {imageLink: '/images/escape.jpg'},
-  {imageLink: '/images/eh.jpg'},
-]
-const secondRow = [
-  {imageLink: '/images/gf.jpg'},
-  {imageLink: '/images/ss.jpg'},
-  {imageLink: '/images/tc.jpeg'},
-  {imageLink: '/images/fb.jpg'},
-  {imageLink: '/images/gh.webp'},
-  {imageLink: '/images/2f2.webp'},
-]
 
-const thirdRow =[
-  {imageLink: '/images/here.jpg'},
-  {imageLink: '/images/dh.jpeg'},
-  {imageLink: '/images/lt.jpg'},
-]
+interface ImageData {
+  imageLink: string;
+  title: string;
+}
+
+const firstRow = [
+  { imageLink: '/images/you.jpg', title: 'You' },
+  { imageLink: '/images/forgotten.jpg', title: '1917' },
+  { imageLink: '/images/bm.png', title: 'Black Mirror' },
+  { imageLink: '/images/wednesday.jpg', title: 'Wednesday' },
+  { imageLink: '/images/escape.jpg', title: 'Escape' },
+  { imageLink: '/images/eh.jpg', title: 'Enola Holmes' },
+];
+
+const secondRow = [
+  { imageLink: '/images/gf.jpg', title: 'Godfather' },
+  { imageLink: '/images/ss.jpg', title: 'Shawshank' },
+  { imageLink: '/images/tc.jpeg', title: 'Oblivion' },
+  { imageLink: '/images/fb.jpg', title: 'Fantastic Beast' },
+  { imageLink: '/images/gh.webp', title: 'GreyHound' },
+  { imageLink: '/images/2f2.webp', title: 'Sight' },
+];
+
+const thirdRow = [
+  { imageLink: '/images/here.jpg', title: 'Here' },
+  { imageLink: '/images/dh.jpeg', title: 'The Desperate Hour' },
+  { imageLink: '/images/lt.jpg', title: 'A Story Of Egos' },
+];
 
 const fourthRow = [
-  {imageLink: '/images/jk.webp'},
-  {imageLink: '/images/sa.png'},
-  {imageLink: '/images/meh.jpg'},
-  {imageLink: '/images/akira.jpg'},
-  {imageLink: '/images/yn.jpg'},
-  {imageLink: '/images/wc.jpg'},
-] 
-
-
+  { imageLink: '/images/jk.webp', title: 'Jujutsu Kaisen' },
+  { imageLink: '/images/sa.png', title: 'Sprited Away' },
+  { imageLink: '/images/meh.jpg', title: 'Anime' },
+  { imageLink: '/images/akira.jpg', title: 'Akira' },
+  { imageLink: '/images/yn.jpg', title: 'Your Name' },
+  { imageLink: '/images/wc.jpg', title: 'Wolf Children' },
+];
 
 function User() {
+
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [filteredImages, setFilteredImages] = useState<ImageData[]>([]);
+
+  const allImages = [...firstRow, ...secondRow, ...thirdRow, ...fourthRow];
+
+  const updateFilteredImages = () => {
+    const lowerCaseQuery = searchQuery.toLowerCase();
+    const filtered = allImages.filter((image) =>
+      image.title.toLowerCase().includes(lowerCaseQuery)
+    );
+    setFilteredImages(filtered);
+  };
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+    updateFilteredImages();
+  };
 
   interface DropdownMenuLabelProps {
     children: string;
   }
+
+
+  const [isInputVisible, setIsInputVisible] = useState(false);
+
+  const toggleInputVisibility = () => {
+    setIsInputVisible(!isInputVisible);
+  };
   
 
   const [scrolling, setScrolling] = useState(false);
@@ -126,12 +146,13 @@ function User() {
             <Link href='/user/moviePlayer' className=' w-32 h-12  bg-[#ffffff] rounded-sm hover:bg-[#c8c4c4] flex items-center' ><p className='text-black flex items-center px-6 font-bold'><Play className='size-8' />&nbsp;Play</p></Link>
            
   <Dialog >
-  <DialogTrigger>
-    <button className='w-44 h-12 mx-3 bg-[#525454] rounded-sm hover:bg-[#363a3c]'>
+  <DialogTrigger className='w-44 h-12 mx-3 bg-[#525454] rounded-sm hover:bg-[#363a3c]'>
+    
       <p className='flex items-center px-6 text-lg font-semibold'>
         <Info className='size-8' />&nbsp;&nbsp;More Info
       </p>
-    </button>
+ 
+    
   </DialogTrigger>
   <DialogContent className='bg-[#181818]'>
     <DialogHeader>
@@ -152,14 +173,11 @@ function User() {
       </div>
       <div className='absolute bottom-56 right-0 rounded-full size-10 flex justify-center items-center border-[#929492] text-[#929492] border'><Volume2 /></div>
     </div>
-    <ReactPlayer 
-      url="/images/thomas.mp4"
-      playing={true}
-      controls={false}
-      muted={true}  
-      loop={true}
-      width="100%"
-      height="100%"
+    <Image
+      src={pbg}
+    width={1000}
+    height={1000}
+    alt='pb'
       className="z-0"
     />
   </div>
@@ -324,6 +342,8 @@ function User() {
   <div className='h-32  border-b rounded-sm flex items-center px-8  text-white  border-[#4d4d4d]'><p className='font-semibold text-xl mr-4'>6</p><Image className='rounded-sm' src={pb6} height={130} width={130} alt="thomas"></Image><div className=' ml-4 h-16 w-full '><div className='flex w-full font-bold '><p className='w-28'>Episode 6</p><p className='w-full justify-end flex mr-10'>54m</p></div>
   <p className='text-[#d2d2d2] mt-2'>Ambitious gang leader Thomas Shelby recognizes an opportunity to move &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  up in the world thanks to a missing crate of guns.</p></div></div>
 </div>
+<p className='text-2xl mt-8  text-white font-bold'>More Like This</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus porro dolorum dolorem quibusdam id officia, in rem facilis ratione provident voluptate delectus excepturi, asperiores sequi saepe reiciendis quae voluptatem laboriosam.</p>
 </DialogDescription>
     </DialogHeader>
   </DialogContent>
@@ -355,7 +375,24 @@ function User() {
         </div>
         <div className='inline-flex  w-1/2 justify-end text-white '>
             <div className='inline-flex px-12 h-full '>
-        <Search/>
+        <Search  onClick={toggleInputVisibility} className="cursor-pointer"/>
+  {isInputVisible && (
+ <input
+ type="text"
+ placeholder="Titles, people, genres"
+ value={searchQuery}
+ onChange={handleInputChange}
+ className="bg-black ml-2 text-white border border-white p-2 flex h-9 active:outline-none focus:outline-none"
+ style={{
+   outline: 'none',
+   border: '1px solid white', 
+   boxShadow: 'none',
+ }}
+/>
+
+     
+      
+      )}
         <Link href='user/kids' className='px-5 text-sm flex items-center h-6'>Kids</Link>
         <span className='flex items-start '>
         <Bell  />
@@ -400,7 +437,7 @@ function User() {
 <Menu.Item>
   {({ active }) => (
     <Link
-      href="#"
+      href="who/manageProfile"
       className={classNames(
         active ? ' underline' : 'text-white',
         ' px-4 py-2 text-xs flex items-center' 
@@ -414,7 +451,7 @@ function User() {
 <Menu.Item>
   {({ active }) => (
     <Link
-      href="#"
+      href="transfer"
       className={classNames(
         active ? ' underline' : 'text-white',
         ' px-4 py-2 text-xs flex items-center' 
@@ -428,7 +465,7 @@ function User() {
 <Menu.Item>
   {({ active }) => (
     <Link
-      href="#"
+      href="/account"
       className={classNames(
         active ? ' underline' : 'text-white',
         ' px-4 py-2 text-xs flex items-center' 
@@ -459,7 +496,7 @@ function User() {
     <>
       <p className='text-[#4a4946]'>_______________________________</p>
       <Link
-        href="#"
+        href="../"
         className={classNames(
           active ? 'underline' : 'text-white',
           'px-4 py-2 text-xs flex items-center justify-center'
@@ -485,8 +522,12 @@ function User() {
       
       
       <div className='  w-screen  bg-[#141414] text-white '>
-     
-        <div className="absolute top-3/4 w-full py-24">
+
+      {searchQuery === '' ? (
+        // Display firstRow when search input is empty
+        <div className="firstRow absolute top-3/4 w-full py-24">
+
+        
         <p className=' px-16 font-semibold py-3  text-xl'>Top Picks for you</p>
         <Carousel
           opts={{
@@ -509,6 +550,41 @@ function User() {
           <CarouselNext className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
         </Carousel>
       </div>
+        ) : (
+          // Display search results when search input is not empty
+          <div className="search absolute top-3/4 w-full py-24">
+<p className=' px-16 font-semibold py-3  text-xl'>Search Results: </p>
+<div className=' w-screen flex justify-center  '>
+        <Carousel
+  opts={{
+    align: "start",
+  }}
+  className="w-11/12 h-32 "
+>
+            <CarouselContent>
+ 
+              {filteredImages.map((image, index) => (
+               <React.Fragment key={index}>
+                 <CarouselItem className=" lg:basis-1/6 flex justify-center h-32">  
+                  <Link href="/user/moviePlayer">
+                    <Image
+                      width={11200}
+                      height={96}
+                      src={image.imageLink}
+                      alt={image.title}
+                      className='rounded-sm h-full'
+                    />
+                  </Link>
+                  </CarouselItem>
+             </React.Fragment>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+  <CarouselNext className='bg-transparent h-full border-none rounded-sm hover:bg-transparent' />
+            </Carousel>
+            </div>
+          </div>
+        )}
       <br />
       <br />
       <br />
